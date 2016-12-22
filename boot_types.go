@@ -1,6 +1,6 @@
 package hetzner
 
-import . "github.com/appscode/go-jsontypes"
+import . "github.com/appscode/go/encoding/json/types"
 
 type Rescue struct {
 	ServerIP      string           `json:"server_ip"`
