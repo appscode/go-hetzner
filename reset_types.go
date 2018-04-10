@@ -11,3 +11,9 @@ type ResetCreateRequest struct {
 	ServerIP string
 	Type     string `url:"type"`
 }
+
+type ResetCreateResponse struct {
+	ServerIP     string `json:"server_ip"`
+	ServerNumber int    `json:"server_number"`
+	Type         string `json:"type"`
+}
