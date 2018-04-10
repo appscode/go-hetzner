@@ -3,7 +3,7 @@ package hetzner
 type Reset struct {
 	ServerIP        string   `json:"server_ip"`
 	ServerNumber    int      `json:"server_number"`
-	Type            []string `json:"type"`
+	Type            string 	 `json:"type"`
 	OperatingStatus string   `json:"operating_status"`
 }
 
