@@ -9,7 +9,7 @@ import (
 type ResetService interface {
 	List() ([]*Reset, *http.Response, error)
 	Get(serverIP string) (*Reset, *http.Response, error)
-	Create(req *ResetCreateRequest) (*Reset, *http.Response, error)
+	Create(req *ResetCreateRequest) (*ResetCreateResponse, *http.Response, error)
 }
 
 type ResetServiceImpl struct {
@@ -45,7 +45,7 @@ func (s *ResetServiceImpl) Get(serverIP string) (*Reset, *http.Response, error) 
 	return data.Reset, resp, err
 }
 
-func (s *ResetServiceImpl) Create(req *ResetCreateRequest) (*Reset, *http.Response, error) {
+func (s *ResetServiceImpl) Create(req *ResetCreateRequest) (*ResetCreateResponse, *http.Response, error) {
 	path := fmt.Sprintf("/reset/%v", req.ServerIP)
 
 	type Data struct {
