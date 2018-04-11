@@ -55,10 +55,10 @@ func (s *ResetServiceImpl) Create(req *ResetCreateRequest) (*Reset, *http.Respon
 	data := Data{}
 	resp, err := s.client.Call(http.MethodPost, path, req, &data, true)
 
-	out := &Reset {
-		data.Reset.ServerIP,
-		data.Reset.ServerNumber,
-		[]string{ data.Reset.Type },
+	out := &Reset{
+		ServerIP:     data.Reset.ServerIP,
+		ServerNumber: data.Reset.ServerNumber,
+		Type:         []string{data.Reset.Type},
 	}
 	return out, resp, err
 }
