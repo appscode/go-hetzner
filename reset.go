@@ -50,18 +50,15 @@ func (s *ResetServiceImpl) Create(req *ResetCreateRequest) (*Reset, *http.Respon
 
 	type Data struct {
 		ResetResp *ResetCreateResponse `json:"reset"`
-		Reset     *Reset
 	}
 
 	data := Data{}
 	resp, err := s.client.Call(http.MethodPost, path, req, &data, true)
 
-	data.Reset = &Reset{
+	out := &Reset {
 		data.ResetResp.ServerIP,
 		data.ResetResp.ServerNumber,
-		[]string{data.ResetResp.Type},
-		"",
+		[]string{data.ResetResp.Type
 	}
-
-	return data.Reset, resp, err
+	return out, resp, err
 }
